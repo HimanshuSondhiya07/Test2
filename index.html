@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test2</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 20% 1fr;
+        height: 100%;
+    }
+    .tabs {
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    .tab-item {
+        padding: 10px;
+        cursor: pointer;
+        border-bottom: 1px solid #ccc;
+    }
+    .tab-item:last-child {
+        border-bottom: none;
+    }
+    .iframe-container {
+        border: 1px solid #ccc;
+        height: 100%;
+    }
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+</style>
+</head>
+<body>
+    
+<div class="container">
+    <div class="tabs">
+        <feildset>
+        <div class="tab-item" onclick="showPage('iframe1')">Project-1 Resume <hr>
+        <img src="Screenshot (118).png" alt="" width="200" height="200"> <hr>
+        </div>
+        <div class="tab-item" onclick="showPage('iframe2')">Project-2 Cat Photo <hr>
+        <img src="Screenshot (119).png" alt="" width="200" height="200"> <hr>
+        </div>
+        <div class="tab-item" onclick="showPage('iframe3')">Project-3 Form <hr>
+        <img src="Screenshot (120).png" alt="" width="200" height="200"> <hr>
+        </div>
+        <div class="tab-item" onclick="showPage('iframe4')">Project-4 Tribute Page <hr>
+        <img src="Screenshot (121).png" alt="" width="200" height="200"> <hr>
+        </div>
+    </div>
+</feildset>
+    <div class="iframe-container">
+        <iframe id="iframe1" src="https://himanshusondhiya07.github.io/Assignment1-Resume/" frameborder="0"></iframe>
+        <iframe id="iframe2" src="https://himanshusondhiya07.github.io/AssignmentCatPhoto/" frameborder="0" style="display:none;"></iframe>
+        <iframe id="iframe3" src="https://himanshusondhiya07.github.io/AssignmentForm/" frameborder="0" style="display:none;"></iframe>
+        <iframe id="iframe4" src="https://himanshusondhiya07.github.io/AssignmentTributePage/" frameborder="0" style="display:none;"></iframe>
+    </div>
+</div>
+
+<script>
+    function showPage(id) {
+        const iframes = document.querySelectorAll('.iframe-container iframe');
+        iframes.forEach(iframe => {
+            if (iframe.id === id) {
+                iframe.style.display = 'block';
+            } else {
+                iframe.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
